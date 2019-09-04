@@ -13,11 +13,13 @@ body {
 .ui.raised.center.aligned.segment {
   width: 50%;
   margin: 0 auto;
-  background: #2d1832;
+  background: #f1f3f8;
 }
 
 .ui.header {
-  color: #f1f3f8;
+  color: #2d1832;
+  font-family: "Fira sans", sans-serif;
+  font-size: 40px !important;
 }
 
 .ui.raised.segment {
@@ -56,5 +58,5 @@ body {
 
 .ui.raised.card.item.completed {
   background: #2d1832;
-  color: white;
+  color: #f1f3f8;
 }
