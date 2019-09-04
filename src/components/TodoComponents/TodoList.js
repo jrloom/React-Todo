@@ -1,4 +1,5 @@
 import React from "react";
+import "./Todo.css";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
@@ -6,7 +7,7 @@ const TodoList = props => {
   return (
     <div>
       <TodoForm addTask={props.addTask} />
-      <Todo tasks={props.tasks} />
+      <Todo tasks={props.tasks} completeTask={props.completeTask} />
     </div>
   );
 };

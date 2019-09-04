@@ -33,7 +33,16 @@ class App extends React.Component {
     this.setState({ tasks: [...this.state.tasks, newTask] });
   };
 
-  completeTask = taskID => {};
+  completeTask = taskID => {
+    this.setState({
+      tasks: this.state.tasks.map(task => {
+        if (task.id === taskID) {
+          return { ...task, completed: !task.completed };
+        }
+        return task;
+      })
+    });
+  };
 
   clearTask = event => {};
 
@@ -42,7 +51,7 @@ class App extends React.Component {
       <div className="App">
         <div>
           <h1>Do Stuff</h1>
-          <TodoList tasks={this.state.tasks} addTask={this.addTask} />
+          <TodoList tasks={this.state.tasks} addTask={this.addTask} completeTask={this.completeTask} />
         </div>
       </div>
     );
