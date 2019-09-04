@@ -1,5 +1,7 @@
 import React from "react";
+import "./App.scss";
 import TodoList from "./components/TodoComponents/TodoList";
+import { Container, Divider, Header, Icon, Segment } from "semantic-ui-react";
 
 const tasks = [
   {
@@ -11,6 +13,11 @@ const tasks = [
     task: "Do Stuff",
     id: 2,
     completed: false
+  },
+  {
+    task: "Do something else",
+    id: 3,
+    complete: false
   }
 ];
 class App extends React.Component {
@@ -58,9 +65,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <div>
-          <h1>Do Stuff</h1>
+      <Container className="wrapper" textAlign={"center"}>
+        <Segment className="content" raised textAlign={"center"}>
+          <Header as="h1">Do Stuff</Header>
           <TodoList
             tasks={this.state.tasks}
             taskName={this.state.taskName}
@@ -70,8 +77,8 @@ class App extends React.Component {
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
           />
-        </div>
-      </div>
+        </Segment>
+      </Container>
     );
   }
 }

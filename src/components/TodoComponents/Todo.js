@@ -1,14 +1,15 @@
 import React from "react";
+import { Card, Item } from "semantic-ui-react";
 
 const Todo = props => {
   return (
-    <div>
+    <Card.Group centered itemsPerRow={1}>
       {props.tasks.map(task => (
-        <div key={task.id} className={`item${task.completed ? " completed" : ""}`} onClick={() => props.completeTask(task.id)}>
+        <Card raised key={task.id} className={`item${task.completed ? " completed" : ""}`} onClick={() => props.completeTask(task.id)}>
           {task.task}
-        </div>
+        </Card>
       ))}
-    </div>
+    </Card.Group>
   );
 };
 
