@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
 import TodoList from "./components/TodoComponents/TodoList";
-import { Container, Divider, Header, Icon, Segment } from "semantic-ui-react";
+import { Container, Header, Segment } from "semantic-ui-react";
 
 const tasks = [
   {
@@ -34,6 +34,8 @@ class App extends React.Component {
       completed: false
     };
     this.setState({ tasks: [...this.state.tasks, newTask] });
+    const dataStore = JSON.stringify(newTask);
+    localStorage.setItem(Date.now(), dataStore);
   };
 
   completeTask = taskID => {
