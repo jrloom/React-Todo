@@ -20,7 +20,7 @@ class App extends React.Component {
 
   constructor() {
     super();
-    this.state = { tasks };
+    this.state = { tasks, taskName: "" };
   }
 
   addTask = (event, taskName) => {
@@ -46,12 +46,21 @@ class App extends React.Component {
 
   clearTask = event => {};
 
+  handleChange = event => {
+    this.setState({ taskName: event.target.value });
+  };
+
+  handleSubmit = event => {
+    this.addTask(event, this.state.taskName);
+    this.setState({ taskName: "" });
+  };
+
   render() {
     return (
       <div className="App">
         <div>
           <h1>Do Stuff</h1>
-          <TodoList tasks={this.state.tasks} addTask={this.addTask} completeTask={this.completeTask} />
+          <TodoList tasks={this.state.tasks} taskName={this.state.taskName} addTask={this.addTask} completeTask={this.completeTask} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
         </div>
       </div>
     );

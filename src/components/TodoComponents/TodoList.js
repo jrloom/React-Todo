@@ -6,7 +6,7 @@ import TodoForm from "./TodoForm";
 const TodoList = props => {
   return (
     <div>
-      <TodoForm addTask={props.addTask} />
+      <TodoForm taskName={props.taskName} addTask={props.addTask} handleChange={props.handleChange} handleSubmit={props.handleSubmit} />
       <Todo tasks={props.tasks} completeTask={props.completeTask} />
     </div>
   );
