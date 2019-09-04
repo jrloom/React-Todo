@@ -14,10 +14,6 @@ const tasks = [
   }
 ];
 class App extends React.Component {
-  // you will need a place to store your state in this component.
-  // design `App` to be the parent component of your application.
-  // this component is going to take care of state, and any change handlers you need to work with your state
-
   constructor() {
     super();
     this.state = { tasks, taskName: "" };
@@ -44,7 +40,12 @@ class App extends React.Component {
     });
   };
 
-  clearTask = event => {};
+  clearTask = event => {
+    event.preventDefault();
+    this.setState({
+      tasks: this.state.tasks.filter(task => !task.completed)
+    });
+  };
 
   handleChange = event => {
     this.setState({ taskName: event.target.value });
@@ -60,7 +61,15 @@ class App extends React.Component {
       <div className="App">
         <div>
           <h1>Do Stuff</h1>
-          <TodoList tasks={this.state.tasks} taskName={this.state.taskName} addTask={this.addTask} completeTask={this.completeTask} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
+          <TodoList
+            tasks={this.state.tasks}
+            taskName={this.state.taskName}
+            addTask={this.addTask}
+            completeTask={this.completeTask}
+            clearTask={this.clearTask}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
         </div>
       </div>
     );
