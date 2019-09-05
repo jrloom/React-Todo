@@ -5,6 +5,9 @@ import { Container, Header, Segment } from "semantic-ui-react";
 
 const tasks = [];
 
+for (let i = 0, len = localStorage.length; i < len; ++i) {
+  tasks.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+}
 class App extends React.Component {
   constructor() {
     super();
