@@ -67,8 +67,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <Container className="wrapper" textAlign={"center"}>
-        <Segment className="content" raised textAlign={"center"}>
+      <Container textAlign={"center"}>
+        <Segment raised textAlign={"center"}>
           <Header as="h1">Do Stuff</Header>
           <TodoList
             tasks={this.state.tasks}

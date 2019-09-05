@@ -7,7 +7,7 @@ import { Container, Segment } from "semantic-ui-react";
 const TodoList = props => {
   return (
     <Container>
-      <Segment className="formArea" raised>
+      <Segment raised>
         <TodoForm
           taskName={props.taskName}
           addTask={props.addTask}
@@ -16,7 +16,7 @@ const TodoList = props => {
           handleSubmit={props.handleSubmit}
         />
       </Segment>
-      <Segment raised>
+      <Segment className="list" raised>
         <Todo tasks={props.tasks} completeTask={props.completeTask} />
       </Segment>
     </Container>

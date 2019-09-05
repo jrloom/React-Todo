@@ -6,7 +6,9 @@ const Todo = props => {
     <Card.Group centered itemsPerRow={1}>
       {props.tasks.map(task => (
         <Card raised key={task.id} className={`item${task.completed ? " completed" : ""}`} onClick={() => props.completeTask(task.id)}>
-          {task.task}
+          <span className={`${task.completed ? "strike" : ""}`}>
+            <span className={`${task.completed ? "complete" : ""}`}>{task.task}</span>
+          </span>
         </Card>
       ))}
     </Card.Group>

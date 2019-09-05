@@ -28,6 +28,10 @@ body {
   background: #f1f3f8;
 }
 
+.ui.raised.segment.list {
+  min-height: 50vh;
+}
+
 .ui.fluid.icon.input {
   margin-bottom: 30px;
   padding: 10px;
@@ -42,10 +46,19 @@ body {
 .ui.button {
   background: #2b818e !important;
   color: #f1f3f8 !important;
+  transition: background 300ms;
   &:hover {
     background: #2d1832 !important;
     color: #f1f3f8 !important;
   }
+}
+
+.ui.cards > .card {
+  margin: 0;
+}
+
+.ui.centered.one.cards {
+  padding: 15px;
 }
 
 .ui.raised.card.item {
@@ -55,9 +68,25 @@ body {
 
 .ui.raised.card.item {
   color: #2d1832;
+  transition: background 300ms;
+  &:hover {
+    background: #d4e5e8;
+  }
 }
 
 .ui.raised.card.item.completed {
-  background: #2d1832;
+  background: #113338;
+}
+
+.strike {
+  color: #8e382b;
+  text-decoration: line-through;
+}
+
+.complete {
   color: #f1f3f8;
+}
+
+a.ui.card:hover {
+  transform: none !important;
 }
