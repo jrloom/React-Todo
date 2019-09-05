@@ -3,23 +3,8 @@ import "./App.scss";
 import TodoList from "./components/TodoComponents/TodoList";
 import { Container, Header, Segment } from "semantic-ui-react";
 
-const tasks = [
-  {
-    task: "Make task list",
-    id: 1,
-    completed: false
-  },
-  {
-    task: "Do Stuff",
-    id: 2,
-    completed: false
-  },
-  {
-    task: "Do something else",
-    id: 3,
-    complete: false
-  }
-];
+const tasks = [];
+
 class App extends React.Component {
   constructor() {
     super();
@@ -34,8 +19,7 @@ class App extends React.Component {
       completed: false
     };
     this.setState({ tasks: [...this.state.tasks, newTask] });
-    const dataStore = JSON.stringify(newTask);
-    localStorage.setItem(Date.now(), dataStore);
+    localStorage.setItem(newTask.id, JSON.stringify(newTask));
   };
 
   completeTask = taskID => {
