@@ -41,6 +41,7 @@ class App extends React.Component {
     this.setState({
       tasks: this.state.tasks.filter(task => !task.completed)
     });
+    this.state.tasks.filter(task => (task.completed ? localStorage.removeItem(task.id) : null));
   };
 
   handleChange = event => {
