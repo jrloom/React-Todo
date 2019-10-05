@@ -1,2 +1,26 @@
-// your components will all go in this `component` directory.
-// feel free to change this component.js into TodoList.js
+import React from "react";
+import "./Todo.css";
+import Todo from "./Todo";
+import TodoForm from "./TodoForm";
+import { Container, Segment } from "semantic-ui-react";
+
+const TodoList = props => {
+  return (
+    <Container>
+      <Segment raised>
+        <TodoForm
+          taskName={props.taskName}
+          addTask={props.addTask}
+          clearTask={props.clearTask}
+          handleChange={props.handleChange}
+          handleSubmit={props.handleSubmit}
+        />
+      </Segment>
+      <Segment className="list" raised>
+        <Todo tasks={props.tasks} completeTask={props.completeTask} />
+      </Segment>
+    </Container>
+  );
+};
+
+export default TodoList;

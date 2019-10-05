@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans|Pacifico&display=swap");
+
+body {
+  background: #1d1f20;
+  font-family: "Fira sans", sans-serif;
+}
+
+.ui.center.aligned.container {
+  margin: 20px;
+}
+
+.ui.raised.center.aligned.segment {
+  width: 50%;
+  margin: 0 auto;
+  background: #f1f3f8;
+}
+
+.ui.header {
+  color: #2d1832;
+  font-family: "Fira sans", sans-serif;
+  font-size: 40px !important;
+}
+
+.ui.raised.segment {
+  margin: 0 auto;
+  padding: 20px;
+  background: #f1f3f8;
+}
+
+.ui.raised.segment.list {
+  min-height: 50vh;
+}
+
+.ui.fluid.icon.input {
+  margin-bottom: 30px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.edit.icon {
+  color: #2b818e;
+  font-size: 30px;
+}
+
+.ui.button {
+  background: #2b818e !important;
+  color: #f1f3f8 !important;
+  transition: background 300ms;
+  &:hover {
+    background: #2d1832 !important;
+    color: #f1f3f8 !important;
+  }
+}
+
+.ui.cards > .card {
+  margin: 0;
+}
+
+.ui.centered.one.cards {
+  padding: 15px;
+}
+
+.ui.raised.card.item {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.ui.raised.card.item {
+  color: #2d1832;
+  transition: background 300ms;
+  &:hover {
+    background: #d4e5e8;
+  }
+}
+
+.ui.raised.card.item.completed {
+  background: #113338;
+}
+
+.strike {
+  color: #8e382b;
+  text-decoration: line-through;
+}
+
+.complete {
+  color: #f1f3f8;
+}
+
+a.ui.card:hover {
+  transform: none !important;
+}
