@@ -21,8 +21,10 @@ class App extends React.Component {
       id: Date.now(),
       completed: false
     };
-    this.setState({ tasks: [...this.state.tasks, newTask] });
-    localStorage.setItem(newTask.id, JSON.stringify(newTask));
+    if(taskName !== '') {
+    this.setState({ tasks: [...this.state.tasks, newTask] })
+    localStorage.setItem(newTask.id, JSON.stringify(newTask))
+    }
   };
 
   completeTask = taskID => {
